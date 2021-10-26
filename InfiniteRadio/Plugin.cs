@@ -1,7 +1,6 @@
 ﻿using Synapse.Api.Plugin;
 using HarmonyLib;
 using System;
-using Synapse;
 using Synapse.Api;
 
 namespace InfiniteRadio
@@ -12,9 +11,9 @@ namespace InfiniteRadio
        LoadPriority = 0,
        Name = "InfiniteRadio",
        SynapseMajor = 2,
-       SynapseMinor = 4,
+       SynapseMinor = 7,
        SynapsePatch = 2,
-       Version = "1.0.0"
+       Version = "1.1.0"
    )]
     class Plugin : AbstractPlugin
     {
