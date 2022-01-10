@@ -10,12 +10,10 @@ namespace InfiniteRadio.Patches
     {
         static bool Prefix(RadioItem __instance)
         {
-            if (!NetworkServer.active || !__instance.IsUsable)
-                return false;
-            if (__instance._battery == 0.0)
+            if (!__instance.IsUsable) return false;
+
+            if (__instance._battery == 0.0) 
                 __instance._radio.ForceDisableRadio();
-            if (Mathf.Abs(__instance._lastSentBatteryLevel - __instance.BatteryPercent) < 1 || __instance.OwnerInventory.CurItem.TypeId != ItemType.Radio)
-                return false;
             __instance.SendStatusMessage();
             return false;
         }
