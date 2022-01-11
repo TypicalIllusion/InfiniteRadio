@@ -17,24 +17,19 @@ namespace InfiniteRadio
    )]
     class Plugin : AbstractPlugin
     {
-        private int __patchesCounter;
-        public Harmony Harmony { get; private set; }
-
-        [Synapse.Api.Plugin.Config(section = "InfiniteRadio")]
-        public static Config Config;
-
         public override void Load()
         {
-            SynapseController.Server.Logger.Info("InfiniteRadio Loaded");
             Patch();
+            base.Load();
         }
 
         private void Patch()
         {
             try
             {
-                Harmony.PatchAll();
-                Logger.Get.Info("Patching patched successfully");
+                var instance = new Harmony("InfiniteRadio.Patches");
+                instance.PatchAll();
+                Logger.Get.Info("Infite Radio patched successfully");
             }
             catch (Exception e)
             {
