@@ -11,8 +11,8 @@ namespace InfiniteRadio
        LoadPriority = 0,
        Name = "InfiniteRadio",
        SynapseMajor = 2,
-       SynapseMinor = 7,
-       SynapsePatch = 2,
+       SynapseMinor = 8,
+       SynapsePatch = 0,
        Version = "1.1.0"
    )]
     class Plugin : AbstractPlugin
